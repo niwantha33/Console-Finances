@@ -94,7 +94,11 @@ var finances = [
     ['Feb-2017', 671099]
 ];
 
-
+/*
+@func   :   Find the total months from "finances" data sets
+@parm   :   Array 
+@return :   return total months 
+*/
 const find_total_months = function (finances) {
 
     let prev_month = ''; // need to compare current month in order to check repeat month   
@@ -104,17 +108,39 @@ const find_total_months = function (finances) {
 
         let month = finances[i][0];// reading the month        
 
-        if (prev_month !== month) {  
+        if (prev_month !== month) {
 
             total_month++;
 
             prev_month = month; // update previous month to current month 
-        }        
-        
+        }
+
     }
     return total_month;
+}
+
+/*
+@func   :   Find the Profit/Losses over the entire period from "finances" data sets
+@parm   :   Array 
+@return :   return profit/losses
+*/
+const find_profit_losses = function (finances) {
+    
+    let pl = 0; // profit/losses init 
+
+    for (let i = 0; i < finances.length; i++) {
+        // check validity 
+        if(Number(finances[i][1]))
+        {
+            pl += finances[i][1];
+        }
+    }
+
+    return pl;
 }
 
 console.log("Financial Analysis\n----------------------------")
 let t_month = "Total Month: " + find_total_months(finances);
 console.log(t_month);
+let t_pl = "Total: $"+find_profit_losses(finances);
+console.log(t_pl)
