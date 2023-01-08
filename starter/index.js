@@ -125,22 +125,45 @@ const find_total_months = function (finances) {
 @return :   return profit/losses
 */
 const find_profit_losses = function (finances) {
-    
+
     let pl = 0; // profit/losses init 
 
     for (let i = 0; i < finances.length; i++) {
         // check validity 
-        if(Number(finances[i][1]))
-        {
+        if (Number(finances[i][1])) {
             pl += finances[i][1];
         }
     }
-
     return pl;
+}
+
+
+/*
+@func   :   Find average of the changes in Profit/Losses over the entire period 
+            from "finances" data sets
+@parm   :   Array 
+@return :   return Average Change ((Total/Number of months))
+@note:      You will need to track what the total change in profits are from 
+            month to month and then find the average.
+
+*/
+
+const find_avg_of_change_profit_losses = function (finances) {
+    let difference = 0;
+    let i = 0;
+    // number of elements - 1
+    for (; i < (finances.length - 1); i++) {
+        
+        difference += (finances[i + 1][1] - finances[i][1]);
+    }
+    return difference / i;
 }
 
 console.log("Financial Analysis\n----------------------------")
 let t_month = "Total Month: " + find_total_months(finances);
 console.log(t_month);
-let t_pl = "Total: $"+find_profit_losses(finances);
-console.log(t_pl)
+let t_pl = "Total: $" + find_profit_losses(finances);
+console.log(t_pl);
+
+let avg_change = "Average  Change: $"  + find_avg_of_change_profit_losses(finances);
+console.log(avg_change);
