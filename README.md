@@ -11,5 +11,7 @@ This function is designed to find the month and loss amount corresponding to the
 The function returns an array containing the month and loss amount corresponding to the greatest decrease in losses over the given period of time.
 
 ### Example
-- find_greatest_decrease_period([["Jan", -100], ["Feb", -50], ["Mar", -75]])
-```Output: `["Mar", -75]` ```
+```
+find_greatest_decrease_period([["Jan", -100], ["Feb", -50], ["Mar", -75]])
+Output: `["Mar", -75]` 
+```
