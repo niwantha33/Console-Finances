@@ -102,7 +102,7 @@ var finances = [
 const find_total_months = function (finances) {
 
     let prev_month = ''; // need to compare current month in order to check repeat month   
-    let total_month = 0;
+    let no_of_month = 0;
 
     for (let i = 0; i < finances.length; i++) {
 
@@ -110,13 +110,13 @@ const find_total_months = function (finances) {
 
         if (prev_month !== month) {
 
-            total_month++;
+            no_of_month++;
 
             prev_month = month; // update previous month to current month 
         }
 
     }
-    return total_month;
+    return no_of_month;
 }
 
 /*
@@ -131,7 +131,7 @@ const find_profit_losses = function (finances) {
     for (let i = 0; i < finances.length; i++) {
         // check validity 
         if (Number(finances[i][1])) {
-            pl += finances[i][1];
+            pl += Number(finances[i][1]);
         }
     }
     return pl;
@@ -184,6 +184,32 @@ const find_greatest_profit_period = function (finances) {
     return finances[idx];
 }
 
+/*
+@func   :   Find greatest decrease in losses (date and amount) over the entire period 
+            from "finances" data sets
+@parm   :   Array 
+@return :   return array [month,p/l]
+*/
+
+const find_greatest_decrease_period = function (finances) {
+
+    let l_profit = Infinity;
+    let idx = 0; // get the index of the array 
+
+    for (let i = 0; i < finances.length; i++) {
+
+        if (Number(finances[i][1]) && Number(finances[i][1]) < 0) {
+            if (Number(finances[i][1]) < l_profit) {
+                l_profit = Number(finances[i][1]);
+                // console.log(g_profit);
+                idx = i;
+            }
+        }
+    }
+
+    return finances[idx];
+}
+
 console.log("Financial Analysis\n----------------------------")
 
 let t_month = "Total Month: " + find_total_months(finances);
@@ -195,7 +221,10 @@ console.log(t_pl);
 let avg_change = "Average  Change: $" + find_avg_of_change_profit_losses(finances).toFixed(2);
 console.log(avg_change);
 
-let profit = "Greatest Increase in Profits: " + find_greatest_profit_period(finances)[0] + " $" + find_greatest_profit_period(finances)[1];
-console.log(profit);
+let increase = "Greatest Increase in Profits: " + find_greatest_profit_period(finances)[0] + " $" + find_greatest_profit_period(finances)[1];
+console.log(increase);
 
-// let losses = "Greatest Decrease in Profits: " Sep-2013 ($-2196167);
+let decrease = "Greatest Decrease in Profits: " + find_greatest_decrease_period(finances)[0] + " $" + find_greatest_decrease_period(finances)[1];
+console.log(decrease);
+
+
