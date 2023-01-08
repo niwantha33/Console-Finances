@@ -93,3 +93,28 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
 ];
+
+
+const find_total_months = function (finances) {
+
+    let prev_month = ''; // need to compare current month in order to check repeat month   
+    let total_month = 0;
+
+    for (let i = 0; i < finances.length; i++) {
+
+        let month = finances[i][0];// reading the month        
+
+        if (prev_month !== month) {  
+
+            total_month++;
+
+            prev_month = month; // update previous month to current month 
+        }        
+        
+    }
+    return total_month;
+}
+
+console.log("Financial Analysis\n----------------------------")
+let t_month = "Total Month: " + find_total_months(finances);
+console.log(t_month);
