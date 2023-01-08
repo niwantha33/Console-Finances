@@ -147,23 +147,55 @@ const find_profit_losses = function (finances) {
             month to month and then find the average.
 
 */
-
 const find_avg_of_change_profit_losses = function (finances) {
     let difference = 0;
     let i = 0;
     // number of elements - 1
     for (; i < (finances.length - 1); i++) {
-        
+
         difference += (finances[i + 1][1] - finances[i][1]);
     }
     return difference / i;
 }
 
+/*
+@func   :   Find greatest increase in profits (date and amount) over the entire period 
+            from "finances" data sets
+@parm   :   Array 
+@return :   return array [month,p/l]
+*/
+
+const find_greatest_profit_period = function (finances) {
+
+    let g_profit = -Infinity;
+    let idx = 0;
+
+    for (let i = 0; i < finances.length; i++) {
+
+        if (Number(finances[i][1]) && Number(finances[i][1]) > 0) {
+            if (Number(finances[i][1]) > g_profit) {
+                g_profit = Number(finances[i][1]);
+                // console.log(g_profit);
+                idx = i;
+            }
+        }
+    }
+
+    return finances[idx];
+}
+
 console.log("Financial Analysis\n----------------------------")
+
 let t_month = "Total Month: " + find_total_months(finances);
 console.log(t_month);
+
 let t_pl = "Total: $" + find_profit_losses(finances);
 console.log(t_pl);
 
-let avg_change = "Average  Change: $"  + find_avg_of_change_profit_losses(finances);
+let avg_change = "Average  Change: $" + find_avg_of_change_profit_losses(finances).toFixed(2);
 console.log(avg_change);
+
+let profit = "Greatest Increase in Profits: " + find_greatest_profit_period(finances)[0] + " $" + find_greatest_profit_period(finances)[1];
+console.log(profit);
+
+// let losses = "Greatest Decrease in Profits: " Sep-2013 ($-2196167);
