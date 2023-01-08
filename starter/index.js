@@ -1,3 +1,10 @@
+/*
+@task:      Console Finances - analyzing the financial records 
+@author:    Niwantha
+@Date:      07/01/23
+
+*/
+
 var finances = [
     ['Jan-2010', 867884],
     ['Feb-2010', 984655],
@@ -86,69 +93,3 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
 ];
-
-
-let total_month = 0;// collect total unique months
-
-let total_pl = 0;
-
-let cnt_ = 0
-
-let avg_dif = 0;;
-let avg = [];
-const profit_lose = function (amount) {
-    if (typeof amount === 'number') {
-        total_pl += Number(amount);
-    }
-
-}
-
-// find the difference between adjust two values and push to new array 
-const find_difference_ = function (array_elements) {
-    // tmp_array= [];
-    let cnt = 0;
-    let difference = 0;
-    let i = 0;
-    for (; i < (array_elements.length-1); i++) {
-        // console.log("line no:"+i+" "+ array_elements[i + 1][1]);
-        difference += array_elements[i + 1][1] - array_elements[i][1];
-        // tmp_array.push(difference)// append the difference to the array 
-        
-    }
-
-    return difference / i;
-}
-
-const analyze_account = function (finances) {
-
-    let prev_month; // need to compare current month in order to check repeat month    
-
-    for (let i = 0; i < finances.length; i++) {
-
-        let month = finances[i][0];// reading the month 
-        let pl = finances[i][1];
-
-        if (prev_month !== month) {
-
-            total_month++;
-
-            prev_month = cur_month; // update previous month to current month 
-        }
-        profit_lose(pl);
-        if (typeof amount === 'number') {
-
-        }
-
-        return null;
-    }
-}
-
-    // analyze_account(finances)
-
-
-    // let total_period = `Total Months: ${total_month}`;
-    // let total_t = `Total: $${total_pl}`;
-    // console.log(total_period);
-    // console.log(total_t);
-
-    console.log(find_difference_(finances));
