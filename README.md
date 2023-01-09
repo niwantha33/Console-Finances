@@ -4,6 +4,10 @@
 
 web-page : [link](https://niwantha33.github.io/Console-Finances/)
 
+![ laptop-view ](./starter/images/laptop.png)
+
+![ mobile-view ](./starter/images/mobile.png)
+
 The finances variable is an array of arrays containing financial data, with each inner array containing a month and a profit or loss amount.
 The find_total_months function takes an array of finances data as its input and returns the total number of unique months represented in the array.
 The find_profit_losses function takes an array of finances data as its input and returns the total profit or loss over the given period of time.
@@ -133,6 +137,8 @@ https://github.com/niwantha33/Console-Finances
 - [w3schools](https://www.w3schools.com/js/js_functions.asp) for JavaScript function.
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) for JavaScript function
 - [node](https://nodejs.dev/en/learn/run-nodejs-scripts-from-the-command-line/) for node.js
+- [DOM Element](https://www.w3schools.com/jsref/prop_html_innerhtml.asp)
+- [CSS @media Rule](https://www.w3schools.com/cssref/css3_pr_mediaquery.php)
 
 
 
