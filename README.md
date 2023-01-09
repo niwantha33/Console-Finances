@@ -101,3 +101,38 @@ The function returns an array containing the month and loss amount corresponding
 find_greatest_decrease_period([["Jan", -100], ["Feb", -50], ["Mar", -75]])
 Output: `["Mar", -75]` 
 ```
+
+## Installation
+
+1. Clone the repository to your local machine:
+```link
+https://github.com/niwantha33/Console-Finances
+```
+
+2. Navigate to the root directory of the repository:
+``` cd Console-Finances```
+
+3.  Then run the index.html file using Live Server 
+![ node ](./starter/images/chrome.png)
+
+#### or 
+
+1. Install the required dependencies:
+
+```npm install```
+
+
+2. Run the code:
+```node index.js```
+![ node ](./starter/images/node.png)
+
+## Credits
+
+- [w3schools](https://www.w3schools.com/js/js_functions.asp) for JavaScript function.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) for JavaScript function
+- [node](https://nodejs.dev/en/learn/run-nodejs-scripts-from-the-command-line/) for node.js
+
+
+
+
+
