@@ -213,18 +213,27 @@ const find_greatest_decrease_period = function (finances) {
 console.log("Financial Analysis\n----------------------------")
 
 let t_month = "Total Month: " + find_total_months(finances);
+// adding to html page 
+document.getElementById("total-month").innerHTML =  t_month;
 console.log(t_month);
 
 let t_pl = "Total: $" + find_profit_losses(finances);
+// adding to html page 
+document.getElementById("total").innerHTML =  t_pl;
 console.log(t_pl);
 
 let avg_change = "Average  Change: $" + find_avg_of_change_profit_losses(finances).toFixed(2);
+// adding to html page 
+document.getElementById("average-change").innerHTML =  avg_change;
 console.log(avg_change);
 
-let increase = "Greatest Increase in Profits: " + find_greatest_profit_period(finances)[0] + " $" + find_greatest_profit_period(finances)[1];
+let increase = "Greatest Increase in Profits: " + find_greatest_profit_period(finances)[0] + "  $" + find_greatest_profit_period(finances)[1];
+// adding to html page 
+document.getElementById("increase-profit").innerHTML =  increase;
 console.log(increase);
 
-let decrease = "Greatest Decrease in Profits: " + find_greatest_decrease_period(finances)[0] + " $" + find_greatest_decrease_period(finances)[1];
+let decrease = "Greatest Decrease in Profits: " + find_greatest_decrease_period(finances)[0] + "  $" + find_greatest_decrease_period(finances)[1];
+document.getElementById("decrease-profit").innerHTML =  decrease;
 console.log(decrease);
 
 

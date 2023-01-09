@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    padding-left:1%;
+    font-family: 'PT Serif', serif;
+    background-color: rgb(221, 224, 224);
+    border: 1px solid rgb(221, 224, 224) ;
+    border-radius: 10px;
+}
+.container>h1{
+    font-size: 1.8rem;
+
+}
+.container>p{
+    font-size: 1.4rem;
+}
+
+/* dimension:responsive */
+@media only screen and (max-width: 600px){
+    .container>p{
+        font-size:1.2rem ;
+    }
+    .container>h1{
+        justify-content: center;
+        text-align: center;
+    }
+}
