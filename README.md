@@ -2,7 +2,7 @@
 
 ## Description
 
-web-page : ![link](https://niwantha33.github.io/Console-Finances/)
+web-page : [link](https://niwantha33.github.io/Console-Finances/)
 
 The finances variable is an array of arrays containing financial data, with each inner array containing a month and a profit or loss amount.
 The find_total_months function takes an array of finances data as its input and returns the total number of unique months represented in the array.
