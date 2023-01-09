@@ -21,6 +21,9 @@
 
 /* dimension:responsive */
 @media only screen and (max-width: 600px){
+    .container{
+        background-color: rgb(229, 201, 255);
+    }
     .container>p{
         font-size:1.2rem ;
     }
